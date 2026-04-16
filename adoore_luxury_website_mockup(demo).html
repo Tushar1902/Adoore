@@ -1,0 +1,309 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  .ads-root{font-family:'Jost',sans-serif;font-weight:300;background:#0e0d0c;color:#e8e4dc;line-height:1.6;overflow-x:hidden}
+  .ads-root a{text-decoration:none;color:inherit}
+  /* NAV */
+  .ads-nav{display:flex;align-items:center;justify-content:space-between;padding:28px 60px;position:relative;z-index:10;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .ads-logo-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:0.18em;color:#f0ece2}
+  .ads-logo-tag{font-size:9px;letter-spacing:0.35em;color:#b09a72;text-transform:uppercase;margin-top:2px}
+  .ads-nav-links{display:flex;gap:40px;align-items:center}
+  .ads-nav-links a{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,236,226,0.55);transition:color 0.3s}
+  .ads-nav-links a:hover{color:#b09a72}
+  .ads-nav-cta{border:1px solid rgba(176,154,114,0.5);padding:9px 22px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#b09a72 !important;transition:all 0.3s !important}
+  .ads-nav-cta:hover{background:rgba(176,154,114,0.12) !important}
+  /* HERO */
+  .ads-hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;position:relative;background:linear-gradient(175deg,#0e0d0c 0%,#161412 55%,#1a1714 100%)}
+  .ads-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(176,154,114,0.06) 0%,transparent 70%)}
+  .ads-hero-label{font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:#b09a72;margin-bottom:36px;display:flex;align-items:center;gap:16px}
+  .ads-hero-label::before,.ads-hero-label::after{content:'';display:block;width:40px;height:1px;background:rgba(176,154,114,0.4)}
+  .ads-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:300;line-height:1.0;letter-spacing:-0.01em;color:#f0ece2;margin-bottom:28px}
+  .ads-hero-title em{font-style:italic;color:#b09a72}
+  .ads-hero-sub{font-size:14px;letter-spacing:0.12em;color:rgba(240,236,226,0.45);max-width:480px;line-height:1.9;margin-bottom:56px}
+  .ads-hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .ads-btn-primary{background:#b09a72;color:#0e0d0c;padding:14px 40px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500;border:none;cursor:pointer;transition:background 0.3s}
+  .ads-btn-primary:hover{background:#c4ae88}
+  .ads-btn-ghost{border:1px solid rgba(240,236,226,0.2);padding:14px 40px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,236,226,0.6);background:none;cursor:pointer;transition:all 0.3s}
+  .ads-btn-ghost:hover{border-color:rgba(176,154,114,0.5);color:#b09a72}
+  .ads-hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0.35}
+  .ads-hero-scroll span{font-size:9px;letter-spacing:0.3em;text-transform:uppercase}
+  .ads-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,#b09a72,transparent)}
+  /* VIDEO SECTION */
+  .ads-video{position:relative;height:480px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .ads-video-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=85') center/cover no-repeat}
+  .ads-video-overlay{position:absolute;inset:0;background:rgba(10,9,8,0.68)}
+  .ads-video-content{position:relative;z-index:2;text-align:center;padding:0 40px}
+  .ads-video-tag{font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#b09a72;margin-bottom:20px}
+  .ads-video-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5.5vw,72px);font-weight:300;color:#f0ece2;line-height:1.05;margin-bottom:18px}
+  .ads-video-sub{font-size:13px;letter-spacing:0.14em;color:rgba(240,236,226,0.5)}
+  .ads-play-btn{margin-top:36px;display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#b09a72;cursor:pointer}
+  .ads-play-circle{width:52px;height:52px;border:1px solid rgba(176,154,114,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .ads-play-triangle{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #b09a72;margin-left:3px}
+  /* STATS */
+  .ads-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
+  .ads-stat{padding:48px 40px;text-align:center;border-right:1px solid rgba(255,255,255,0.06)}
+  .ads-stat:last-child{border-right:none}
+  .ads-stat-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:#b09a72;line-height:1;margin-bottom:8px}
+  .ads-stat-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,236,226,0.35)}
+  /* PROJECTS */
+  .ads-section{padding:100px 60px}
+  .ads-section-head{margin-bottom:64px}
+  .ads-section-eyebrow{font-size:10px;letter-spacing:0.38em;text-transform:uppercase;color:#b09a72;margin-bottom:16px}
+  .ads-section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;color:#f0ece2;line-height:1.1;max-width:500px}
+  .ads-projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+  .ads-proj{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:3/4}
+  .ads-proj:first-child{grid-column:span 2;aspect-ratio:16/9}
+  .ads-proj-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94)}
+  .ads-proj:hover .ads-proj-img{transform:scale(1.07)}
+  .ads-proj-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,0.88) 0%,transparent 55%);transition:opacity 0.4s}
+  .ads-proj-info{position:absolute;bottom:0;left:0;right:0;padding:28px;transform:translateY(6px);opacity:0;transition:all 0.4s}
+  .ads-proj:hover .ads-proj-info{opacity:1;transform:translateY(0)}
+  .ads-proj-cat{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#b09a72;margin-bottom:6px}
+  .ads-proj-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#f0ece2}
+  /* EXPERTISE */
+  .ads-expertise{padding:100px 60px;background:#0a0908}
+  .ads-expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px}
+  .ads-exp-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:#161412}
+  .ads-exp-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);opacity:0.6}
+  .ads-exp-card:hover .ads-exp-img{transform:scale(1.05);opacity:0.75}
+  .ads-exp-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,0.92) 0%,rgba(10,9,8,0.2) 100%)}
+  .ads-exp-content{position:absolute;bottom:0;left:0;right:0;padding:32px;text-align:center}
+  .ads-exp-num{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.3em;color:rgba(176,154,114,0.6);margin-bottom:12px}
+  .ads-exp-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:#f0ece2;margin-bottom:8px}
+  .ads-exp-sub{font-size:11px;letter-spacing:0.15em;color:rgba(240,236,226,0.35);text-transform:uppercase}
+  .ads-exp-line{width:0;height:1px;background:#b09a72;margin:16px auto 0;transition:width 0.4s}
+  .ads-exp-card:hover .ads-exp-line{width:40px}
+  /* CLIENTS */
+  .ads-clients{padding:100px 60px;border-top:1px solid rgba(255,255,255,0.06)}
+  .ads-clients-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;flex-wrap:wrap;gap:24px}
+  .ads-marquee-wrap{overflow:hidden;width:100%}
+  .ads-marquee{display:flex;gap:0;animation:marquee 24s linear infinite}
+  .ads-marquee:hover{animation-play-state:paused}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .ads-client-pill{flex-shrink:0;border:1px solid rgba(255,255,255,0.07);padding:28px 52px;display:flex;align-items:center;justify-content:center;transition:border-color 0.3s}
+  .ads-client-pill:hover{border-color:rgba(176,154,114,0.3)}
+  .ads-client-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:rgba(240,236,226,0.25);letter-spacing:0.12em;white-space:nowrap;transition:color 0.3s}
+  .ads-client-pill:hover .ads-client-name{color:rgba(240,236,226,0.6)}
+  /* FOOTER */
+  .ads-footer{background:#080807;border-top:1px solid rgba(255,255,255,0.07);padding:80px 60px 40px}
+  .ads-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
+  .ads-footer-brand .ads-logo-name{font-size:20px;margin-bottom:4px}
+  .ads-footer-brand p{font-size:13px;color:rgba(240,236,226,0.35);line-height:1.8;margin-top:20px;max-width:260px}
+  .ads-footer-col h5{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:#b09a72;font-weight:400;margin-bottom:24px}
+  .ads-footer-col ul{list-style:none}
+  .ads-footer-col ul li{margin-bottom:12px}
+  .ads-footer-col ul li a{font-size:13px;color:rgba(240,236,226,0.35);transition:color 0.3s}
+  .ads-footer-col ul li a:hover{color:rgba(240,236,226,0.75)}
+  .ads-socials{display:flex;gap:12px;margin-top:28px}
+  .ads-social{width:36px;height:36px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:border-color 0.3s;font-size:12px;color:rgba(240,236,226,0.35)}
+  .ads-social:hover{border-color:rgba(176,154,114,0.4);color:#b09a72}
+  .ads-footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .ads-footer-bottom p{font-size:11px;color:rgba(240,236,226,0.2);letter-spacing:0.1em}
+</style>
+
+<div class="ads-root">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Adoore Decore Systems — luxury architectural website mockup including navbar, hero, video showcase, projects, expertise, clients and footer sections</h2>
+
+  <!-- NAVBAR -->
+  <nav class="ads-nav">
+    <div>
+      <img src="C:\Users\Dev\Downloads\projs\project_photos\LOGO.PNG" alt="Company Logo" style="height:110px;">
+    </div>
+    <div class="ads-nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+      <a href="#" class="ads-nav-cta">Get Quote</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="ads-hero">
+    <div class="ads-hero-label">Premium Architectural Systems</div>
+    <h1 class="ads-hero-title">Precision In<br><em>Every Frame</em></h1>
+    <p class="ads-hero-sub">Aluminium fenestration and facade systems engineered for architecture that demands excellence — from concept to installation.</p>
+    <div class="ads-hero-actions">
+      <button class="ads-btn-primary">View Projects</button>
+      <button class="ads-btn-ghost">Our Expertise</button>
+    </div>
+    <div class="ads-hero-scroll">
+      <span>Scroll</span>
+      <div class="ads-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="ads-stats">
+    <div class="ads-stat"><div class="ads-stat-num">18+</div><div class="ads-stat-label">Years Active</div></div>
+    <div class="ads-stat"><div class="ads-stat-num">2,400</div><div class="ads-stat-label">Projects Delivered</div></div>
+    <div class="ads-stat"><div class="ads-stat-num">12</div><div class="ads-stat-label">Countries</div></div>
+    <div class="ads-stat"><div class="ads-stat-num">ISO</div><div class="ads-stat-label">9001 Certified</div></div>
+  </div>
+
+  <!-- VIDEO SECTION -->
+  <section class="ads-video">
+    <div class="ads-video-bg"></div>
+    <div class="ads-video-overlay"></div>
+    <div class="ads-video-content">
+      <div class="ads-video-tag">Signature Work</div>
+      <h2 class="ads-video-title">Crafting<br>Modern Spaces</h2>
+      <p class="ads-video-sub">Where design meets precision</p>
+      <div class="ads-play-btn">
+        <div class="ads-play-circle"><div class="ads-play-triangle"></div></div>
+        Watch Showreel
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="ads-section">
+    <div class="ads-section-head" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+      <div>
+        <div class="ads-section-eyebrow">Selected Work</div>
+        <h2 class="ads-section-title">Our Signature<br>Projects</h2>
+      </div>
+      <button class="ads-btn-ghost" style="align-self:flex-end">View All Projects</button>
+    </div>
+    <div class="ads-projects-grid">
+      <div class="ads-proj">
+        <div class="ads-proj-img" style="background-image:url('project_photos/mansion.jpeg')"></div>
+        <div class="ads-proj-veil"></div>
+        <div class="ads-proj-info"><div class="ads-proj-cat">Residential · Facade</div><div class="ads-proj-name">The Glass Residence, Gurugram</div></div>
+      </div>
+      <div class="ads-proj">
+        <div class="ads-proj-img" style="background-image:url('https://raw.githubusercontent.com/Tushar1902/Adoore/main/3rd.jpeg')"></div>
+        <div class="ads-proj-veil"></div>
+        <div class="ads-proj-info"><div class="ads-proj-cat">Commercial · Curtain Wall</div><div class="ads-proj-name">Meridian Tower, Mumbai</div></div>
+      </div>
+      <div class="ads-proj">
+        <div class="ads-proj-img" style="background-image:url('https://raw.githubusercontent.com/Tushar1902/Adoore/main/Perched_majestically.jpeg')"></div>
+        <div class="ads-proj-veil"></div>
+        <div class="ads-proj-info"><div class="ads-proj-cat">Hospitality · Windows</div><div class="ads-proj-name">Oberoi Resort, Udaipur</div></div>
+      </div>
+      <div class="ads-proj">
+        <div class="ads-proj-img" style="background-image:url('https://raw.githubusercontent.com/Tushar1902/Adoore/main/Glass_Staircase.jpeg')"></div>
+        <div class="ads-proj-veil"></div>
+        <div class="ads-proj-info"><div class="ads-proj-cat">Residential · Skylight</div><div class="ads-proj-name">Heritage Villa, Jaipur</div></div>
+      </div>
+      <div class="ads-proj">
+        <div class="ads-proj-img" style="background-image:url('https://raw.githubusercontent.com/Tushar1902/Adoore/main/luxury_house.jpeg')"></div>
+        <div class="ads-proj-veil"></div>
+        <div class="ads-proj-info"><div class="ads-proj-cat">Residential · Railing</div><div class="ads-proj-name">Sky Penthouse, Noida</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="ads-expertise">
+    <div class="ads-section-head" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+      <div>
+        <div class="ads-section-eyebrow">What We Build</div>
+        <h2 class="ads-section-title">Our Expertise</h2>
+      </div>
+    </div>
+    <div class="ads-expertise-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="ads-exp-card">
+        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80')"></div>
+        <div class="ads-exp-overlay"></div>
+        <div class="ads-exp-content"><div class="ads-exp-num">01</div><div class="ads-exp-title">Doors</div><div class="ads-exp-sub">Lift-Slide · Pivot · Bi-Fold</div><div class="ads-exp-line"></div></div>
+      </div>
+      <div class="ads-exp-card">
+        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=700&q=80')"></div>
+        <div class="ads-exp-overlay"></div>
+        <div class="ads-exp-content"><div class="ads-exp-num">02</div><div class="ads-exp-title">Windows</div><div class="ads-exp-sub">Casement · Tilt &amp; Turn · Fixed</div><div class="ads-exp-line"></div></div>
+      </div>
+      <div class="ads-exp-card">
+        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=700&q=80')"></div>
+        <div class="ads-exp-overlay"></div>
+        <div class="ads-exp-content"><div class="ads-exp-num">03</div><div class="ads-exp-title">Glass Railing</div><div class="ads-exp-sub">Frameless · Semi-Frame</div><div class="ads-exp-line"></div></div>
+      </div>
+      <div class="ads-exp-card">
+        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=700&q=80')"></div>
+        <div class="ads-exp-overlay"></div>
+        <div class="ads-exp-content"><div class="ads-exp-num">04</div><div class="ads-exp-title">Glazing</div><div class="ads-exp-sub">Structural · Patch · Spider</div><div class="ads-exp-line"></div></div>
+      </div>
+      <div class="ads-exp-card" style="grid-column:span 2">
+        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80');aspect-ratio:auto"></div>
+        <div class="ads-exp-overlay"></div>
+        <div class="ads-exp-content"><div class="ads-exp-num">05</div><div class="ads-exp-title">Internal Partition</div><div class="ads-exp-sub">Movable · Glazed · Acoustic</div><div class="ads-exp-line"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="ads-clients">
+    <div class="ads-clients-head">
+      <div>
+        <div class="ads-section-eyebrow">Trusted By</div>
+        <h2 class="ads-section-title">Our Clients</h2>
+      </div>
+      <p style="font-size:13px;color:rgba(240,236,226,0.3);max-width:280px;text-align:right;line-height:1.8">From luxury residences to landmark commercial towers, our work speaks across sectors.</p>
+    </div>
+    <div class="ads-marquee-wrap">
+      <div class="ads-marquee">
+        <div class="ads-client-pill"><span class="ads-client-name">Trump towers</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Agi Infra</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Tulip Infratech</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">CRC</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">KBE </span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Signatur Global</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Conscient</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Smart World</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Worldmark</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Omaxe</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Krisumi</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">M3M</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ads-footer">
+    <div class="ads-footer-grid">
+      <div class="ads-footer-brand">
+        <div class="ads-logo-name">ADOORE</div>
+        <div class="ads-logo-tag">Decore Systems</div>
+        <p>Engineering precision into every architectural detail. Premium aluminium systems for luxury residential and commercial spaces.</p>
+        <div class="ads-socials">
+          <a class="ads-social" href="#" aria-label="Instagram">In</a>
+          <a class="ads-social" href="#" aria-label="LinkedIn">Li</a>
+          <a class="ads-social" href="#" aria-label="Facebook">Fb</a>
+        </div>
+      </div>
+      <div class="ads-footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="#">Doors</a></li>
+          <li><a href="#">Windows</a></li>
+          <li><a href="#">Glass Railing</a></li>
+          <li><a href="#">Glazing</a></li>
+          <li><a href="#">Partitions</a></li>
+        </ul>
+      </div>
+      <div class="ads-footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Process</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="ads-footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="#">Plot 14, Sector 63<br>Noida — 201307, India</a></li>
+          <li><a href="#">+91 98100 00000</a></li>
+          <li><a href="#">info@adooredecore.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ads-footer-bottom">
+      <p>© 2025 Adoore Decore Systems Pvt. Ltd. All rights reserved.</p>
+      <p>Precision in Every Frame</p>
+    </div>
+  </footer>
+</div>
