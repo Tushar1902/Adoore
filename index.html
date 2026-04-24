@@ -1,4 +1,3 @@
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
   *{box-sizing:border-box;margin:0;padding:0}
@@ -12,20 +11,20 @@
   .ads-nav-links a:hover{color:#b09a72}
   .ads-nav-cta{border:1px solid rgba(176,154,114,0.5);padding:9px 22px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#b09a72 !important;transition:all 0.3s !important}
   .ads-nav-cta:hover{background:rgba(176,154,114,0.12) !important}
-  .ads-hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;position:relative;background:linear-gradient(175deg,#1e1b18 0%,#262320 55%,#2a2724 
-100%)}
-  .ads-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(176,154,114,0.12) 0%,transparent 70%)}
-  .ads-hero-label{font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:#b09a72;margin-bottom:36px;display:flex;align-items:center;gap:16px}
+  .ads-hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;position:relative}
+  .ads-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=85') center/cover no-repeat;z-index:0}
+  .ads-hero-overlay{position:absolute;inset:0;background:linear-gradient(175deg,rgba(30,27,24,0.95) 0%,rgba(38,35,32,0.88) 55%,rgba(42,39,36,0.92) 100%);z-index:1}
+  .ads-hero-label{font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:#b09a72;margin-bottom:36px;display:flex;align-items:center;gap:16px;position:relative;z-index:2}
   .ads-hero-label::before,.ads-hero-label::after{content:'';display:block;width:40px;height:1px;background:rgba(176,154,114,0.4)}
-  .ads-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:300;line-height:1.0;letter-spacing:-0.01em;color:#f0ece2;margin-bottom:28px}
+  .ads-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:300;line-height:1.0;letter-spacing:-0.01em;color:#f0ece2;margin-bottom:28px;position:relative;z-index:2}
   .ads-hero-title em{font-style:italic;color:#b09a72}
-  .ads-hero-sub{font-size:14px;letter-spacing:0.12em;color:rgba(240,236,226,0.65);max-width:480px;line-height:1.9;margin-bottom:56px}
-  .ads-hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .ads-hero-sub{font-size:14px;letter-spacing:0.12em;color:rgba(240,236,226,0.65);max-width:480px;line-height:1.9;margin-bottom:56px;position:relative;z-index:2}
+  .ads-hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
   .ads-btn-primary{background:#b09a72;color:#0e0d0c;padding:14px 40px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500;border:none;cursor:pointer;transition:background 0.3s}
   .ads-btn-primary:hover{background:#c4ae88}
   .ads-btn-ghost{border:1px solid rgba(240,236,226,0.2);padding:14px 40px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,236,226,0.6);background:none;cursor:pointer;transition:all 0.3s}
   .ads-btn-ghost:hover{border-color:rgba(176,154,114,0.5);color:#b09a72}
-  .ads-hero-scroll{display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0.35;margin-top:40px}
+  .ads-hero-scroll{display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0.35;margin-top:40px;position:relative;z-index:2}
   .ads-hero-scroll span{font-size:9px;letter-spacing:0.3em;text-transform:uppercase}
   .ads-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,#b09a72,transparent)}
   .ads-video{position:relative;height:480px;overflow:hidden;display:flex;align-items:center;justify-content:center}
@@ -57,7 +56,7 @@
   .ads-proj-cat{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#b09a72;margin-bottom:6px}
   .ads-proj-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#f0ece2}
   .ads-expertise{padding:100px 60px;background:#0a0908}
-  .ads-expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px}
+  .ads-expertise-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:64px}
   .ads-exp-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:#161412}
   .ads-exp-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);opacity:0.6}
   .ads-exp-card:hover .ads-exp-img{transform:scale(1.05);opacity:0.75}
@@ -142,7 +141,6 @@
     transform:scale(1.08);
     box-shadow:0 6px 32px rgba(37,211,102,0.5);
   }
-  /* Pulse ring */
   .wa-btn::before{
     content:'';
     position:absolute;
@@ -157,6 +155,17 @@
     100%{transform:scale(1.3);opacity:0}
   }
   .wa-icon{width:30px;height:30px;fill:#fff}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1100px){
+    .ads-expertise-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:900px){
+    .ads-expertise-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:600px){
+    .ads-expertise-grid{grid-template-columns:1fr}
+  }
 </style>
 
 <div class="ads-root">
@@ -177,6 +186,8 @@
 
   <!-- HERO -->
   <section class="ads-hero">
+    <div class="ads-hero-bg"></div>
+    <div class="ads-hero-overlay"></div>
     <div class="ads-hero-label">Premium Architectural Systems</div>
     <h1 class="ads-hero-title">Precision In<br><em>Every Frame</em></h1>
     <p class="ads-hero-sub">Aluminium fenestration and facade systems engineered for architecture that demands excellence — from concept to installation.</p>
@@ -280,8 +291,8 @@
         <div class="ads-exp-overlay"></div>
         <div class="ads-exp-content"><div class="ads-exp-num">04</div><div class="ads-exp-title">Glazing</div><div class="ads-exp-sub">Structural · Patch · Spider</div><div class="ads-exp-line"></div></div>
       </div>
-      <div class="ads-exp-card" style="grid-column:span 2">
-        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80')"></div>
+      <div class="ads-exp-card">
+        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80')"></div>
         <div class="ads-exp-overlay"></div>
         <div class="ads-exp-content"><div class="ads-exp-num">05</div><div class="ads-exp-title">Internal Partition</div><div class="ads-exp-sub">Movable · Glazed · Acoustic</div><div class="ads-exp-line"></div></div>
       </div>
@@ -377,12 +388,7 @@
 
 </div>
 
-<!-- ══════════════════════════════════════
-     WHATSAPP FLOATING BUTTON
-     Replace 919810000000 with your actual
-     WhatsApp number in international format
-     (country code + number, no + or spaces)
-══════════════════════════════════════ -->
+<!-- WHATSAPP FLOATING BUTTON -->
 <a class="wa-float"
    href="https://wa.me/918447692117?text=Hello%2C%20I%27m%20interested%20in%20your%20architectural%20solutions."
    target="_blank"
