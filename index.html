@@ -2,53 +2,48 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
   *{box-sizing:border-box;margin:0;padding:0}
-  .ads-root{font-family:'Jost',sans-serif;font-weight:300;background:#0e0d0c;color:#e8e4dc;line-height:1.6;overflow-x:hidden}
+  .ads-root{font-family:'Jost',sans-serif;font-weight:300;background:#2a2724;;color:#e8e4dc;line-height:1.6;overflow-x:hidden}
   .ads-root a{text-decoration:none;color:inherit}
-  /* NAV */
-  .ads-nav{display:flex;align-items:center;justify-content:space-between;padding:28px 60px;position:relative;z-index:10;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .ads-nav{display:flex;align-items:center;justify-content:space-between;padding:28px 60px;position:relative;z-index:10;border-bottom:1px solid rgba(255,255,255,0.15)}
   .ads-logo-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:0.18em;color:#f0ece2}
   .ads-logo-tag{font-size:9px;letter-spacing:0.35em;color:#b09a72;text-transform:uppercase;margin-top:2px}
   .ads-nav-links{display:flex;gap:40px;align-items:center}
-  .ads-nav-links a{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,236,226,0.55);transition:color 0.3s}
+  .ads-nav-links a{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,236,226,0.75);transition:color 0.3s}
   .ads-nav-links a:hover{color:#b09a72}
   .ads-nav-cta{border:1px solid rgba(176,154,114,0.5);padding:9px 22px;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#b09a72 !important;transition:all 0.3s !important}
   .ads-nav-cta:hover{background:rgba(176,154,114,0.12) !important}
-  /* HERO */
-  .ads-hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;position:relative;background:linear-gradient(175deg,#0e0d0c 0%,#161412 55%,#1a1714 100%)}
-  .ads-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(176,154,114,0.06) 0%,transparent 70%)}
+  .ads-hero{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 40px;position:relative;background:linear-gradient(175deg,#1e1b18 0%,#262320 55%,#2a2724 
+100%)}
+  .ads-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(176,154,114,0.12) 0%,transparent 70%)}
   .ads-hero-label{font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:#b09a72;margin-bottom:36px;display:flex;align-items:center;gap:16px}
   .ads-hero-label::before,.ads-hero-label::after{content:'';display:block;width:40px;height:1px;background:rgba(176,154,114,0.4)}
   .ads-hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:300;line-height:1.0;letter-spacing:-0.01em;color:#f0ece2;margin-bottom:28px}
   .ads-hero-title em{font-style:italic;color:#b09a72}
-  .ads-hero-sub{font-size:14px;letter-spacing:0.12em;color:rgba(240,236,226,0.45);max-width:480px;line-height:1.9;margin-bottom:56px}
+  .ads-hero-sub{font-size:14px;letter-spacing:0.12em;color:rgba(240,236,226,0.65);max-width:480px;line-height:1.9;margin-bottom:56px}
   .ads-hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
   .ads-btn-primary{background:#b09a72;color:#0e0d0c;padding:14px 40px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500;border:none;cursor:pointer;transition:background 0.3s}
   .ads-btn-primary:hover{background:#c4ae88}
   .ads-btn-ghost{border:1px solid rgba(240,236,226,0.2);padding:14px 40px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,236,226,0.6);background:none;cursor:pointer;transition:all 0.3s}
   .ads-btn-ghost:hover{border-color:rgba(176,154,114,0.5);color:#b09a72}
-  .ads-hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0.35}
+  .ads-hero-scroll{display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0.35;margin-top:40px}
   .ads-hero-scroll span{font-size:9px;letter-spacing:0.3em;text-transform:uppercase}
   .ads-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,#b09a72,transparent)}
-  /* VIDEO SECTION */
   .ads-video{position:relative;height:480px;overflow:hidden;display:flex;align-items:center;justify-content:center}
   .ads-video-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=85') center/cover no-repeat}
   .ads-video-overlay{position:absolute;inset:0;background:rgba(10,9,8,0.68)}
   .ads-video-content{position:relative;z-index:2;text-align:center;padding:0 40px}
   .ads-video-tag{font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:#b09a72;margin-bottom:20px}
   .ads-video-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5.5vw,72px);font-weight:300;color:#f0ece2;line-height:1.05;margin-bottom:18px}
-  .ads-video-sub{font-size:13px;letter-spacing:0.14em;color:rgba(240,236,226,0.5)}
+  .ads-video-sub{font-size:13px;letter-spacing:0.14em;color:rgba(240,236,226,0.7)}
   .ads-play-btn{margin-top:36px;display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#b09a72;cursor:pointer}
   .ads-play-circle{width:52px;height:52px;border:1px solid rgba(176,154,114,0.5);border-radius:50%;display:flex;align-items:center;justify-content:center}
   .ads-play-triangle{width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-left:14px solid #b09a72;margin-left:3px}
-  /* STATS */
-  .ads-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
+  .ads-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,0.15);border-bottom:1px solid rgba(255,255,255,0.15)}
   .ads-stat{padding:48px 40px;text-align:center;border-right:1px solid rgba(255,255,255,0.06)}
   .ads-stat:last-child{border-right:none}
   .ads-stat-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:#b09a72;line-height:1;margin-bottom:8px}
   .ads-stat-label{font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(240,236,226,0.35)}
-  /* PROJECTS */
   .ads-section{padding:100px 60px}
-  .ads-section-head{margin-bottom:64px}
   .ads-section-eyebrow{font-size:10px;letter-spacing:0.38em;text-transform:uppercase;color:#b09a72;margin-bottom:16px}
   .ads-section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;color:#f0ece2;line-height:1.1;max-width:500px}
   .ads-projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
@@ -56,12 +51,11 @@
   .ads-proj:first-child{grid-column:span 2;aspect-ratio:16/9}
   .ads-proj-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94)}
   .ads-proj:hover .ads-proj-img{transform:scale(1.07)}
-  .ads-proj-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,0.88) 0%,transparent 55%);transition:opacity 0.4s}
+  .ads-proj-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,9,8,0.88) 0%,transparent 55%)}
   .ads-proj-info{position:absolute;bottom:0;left:0;right:0;padding:28px;transform:translateY(6px);opacity:0;transition:all 0.4s}
   .ads-proj:hover .ads-proj-info{opacity:1;transform:translateY(0)}
   .ads-proj-cat{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#b09a72;margin-bottom:6px}
   .ads-proj-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#f0ece2}
-  /* EXPERTISE */
   .ads-expertise{padding:100px 60px;background:#0a0908}
   .ads-expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px}
   .ads-exp-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:#161412}
@@ -74,7 +68,6 @@
   .ads-exp-sub{font-size:11px;letter-spacing:0.15em;color:rgba(240,236,226,0.35);text-transform:uppercase}
   .ads-exp-line{width:0;height:1px;background:#b09a72;margin:16px auto 0;transition:width 0.4s}
   .ads-exp-card:hover .ads-exp-line{width:40px}
-  /* CLIENTS */
   .ads-clients{padding:100px 60px;border-top:1px solid rgba(255,255,255,0.06)}
   .ads-clients-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;flex-wrap:wrap;gap:24px}
   .ads-marquee-wrap{overflow:hidden;width:100%}
@@ -85,7 +78,6 @@
   .ads-client-pill:hover{border-color:rgba(176,154,114,0.3)}
   .ads-client-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:rgba(240,236,226,0.25);letter-spacing:0.12em;white-space:nowrap;transition:color 0.3s}
   .ads-client-pill:hover .ads-client-name{color:rgba(240,236,226,0.6)}
-  /* FOOTER */
   .ads-footer{background:#080807;border-top:1px solid rgba(255,255,255,0.07);padding:80px 60px 40px}
   .ads-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:60px}
   .ads-footer-brand .ads-logo-name{font-size:20px;margin-bottom:4px}
@@ -100,15 +92,79 @@
   .ads-social:hover{border-color:rgba(176,154,114,0.4);color:#b09a72}
   .ads-footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
   .ads-footer-bottom p{font-size:11px;color:rgba(240,236,226,0.2);letter-spacing:0.1em}
+
+  /* ── WHATSAPP FLOATING BUTTON ── */
+  .wa-float{
+    position:fixed;
+    bottom:32px;
+    right:32px;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    gap:0;
+    cursor:pointer;
+    text-decoration:none;
+  }
+  .wa-tooltip{
+    background:#25D366;
+    color:#fff;
+    font-family:'Jost',sans-serif;
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:0.08em;
+    padding:10px 18px 10px 20px;
+    border-radius:32px 0 0 32px;
+    white-space:nowrap;
+    opacity:0;
+    transform:translateX(12px);
+    transition:opacity 0.3s ease, transform 0.3s ease;
+    pointer-events:none;
+    line-height:1;
+  }
+  .wa-float:hover .wa-tooltip{
+    opacity:1;
+    transform:translateX(0);
+  }
+  .wa-btn{
+    width:58px;
+    height:58px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 24px rgba(37,211,102,0.35);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+    flex-shrink:0;
+    position:relative;
+  }
+  .wa-float:hover .wa-btn{
+    transform:scale(1.08);
+    box-shadow:0 6px 32px rgba(37,211,102,0.5);
+  }
+  /* Pulse ring */
+  .wa-btn::before{
+    content:'';
+    position:absolute;
+    inset:-4px;
+    border-radius:50%;
+    border:2px solid rgba(37,211,102,0.4);
+    animation:wa-pulse 2.4s ease-out infinite;
+  }
+  @keyframes wa-pulse{
+    0%{transform:scale(1);opacity:0.7}
+    70%{transform:scale(1.3);opacity:0}
+    100%{transform:scale(1.3);opacity:0}
+  }
+  .wa-icon{width:30px;height:30px;fill:#fff}
 </style>
 
 <div class="ads-root">
-  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Adoore Decore Systems — luxury architectural website mockup including navbar, hero, video showcase, projects, expertise, clients and footer sections</h2>
 
   <!-- NAVBAR -->
   <nav class="ads-nav">
     <div>
-      <img src="https://raw.githubusercontent.com/Tushar1902/Adoore/main/LOGO.png" alt="Company Logo" style="height:110px;">
+      <img src="https://raw.githubusercontent.com/Tushar1902/Adoore/main/LOGO.png" alt="Adoore Logo" style="height:110px;">
     </div>
     <div class="ads-nav-links">
       <a href="#">Home</a>
@@ -159,7 +215,7 @@
 
   <!-- PROJECTS -->
   <section class="ads-section">
-    <div class="ads-section-head" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;margin-bottom:64px">
       <div>
         <div class="ads-section-eyebrow">Selected Work</div>
         <h2 class="ads-section-title">Our Signature<br>Projects</h2>
@@ -197,13 +253,13 @@
 
   <!-- EXPERTISE -->
   <section class="ads-expertise">
-    <div class="ads-section-head" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px">
       <div>
         <div class="ads-section-eyebrow">What We Build</div>
         <h2 class="ads-section-title">Our Expertise</h2>
       </div>
     </div>
-    <div class="ads-expertise-grid" style="grid-template-columns:repeat(3,1fr)">
+    <div class="ads-expertise-grid">
       <div class="ads-exp-card">
         <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80')"></div>
         <div class="ads-exp-overlay"></div>
@@ -225,7 +281,7 @@
         <div class="ads-exp-content"><div class="ads-exp-num">04</div><div class="ads-exp-title">Glazing</div><div class="ads-exp-sub">Structural · Patch · Spider</div><div class="ads-exp-line"></div></div>
       </div>
       <div class="ads-exp-card" style="grid-column:span 2">
-        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80');aspect-ratio:auto"></div>
+        <div class="ads-exp-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80')"></div>
         <div class="ads-exp-overlay"></div>
         <div class="ads-exp-content"><div class="ads-exp-num">05</div><div class="ads-exp-title">Internal Partition</div><div class="ads-exp-sub">Movable · Glazed · Acoustic</div><div class="ads-exp-line"></div></div>
       </div>
@@ -243,12 +299,24 @@
     </div>
     <div class="ads-marquee-wrap">
       <div class="ads-marquee">
-        <div class="ads-client-pill"><span class="ads-client-name">Trump towers</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Trump Towers</span></div>
         <div class="ads-client-pill"><span class="ads-client-name">Agi Infra</span></div>
         <div class="ads-client-pill"><span class="ads-client-name">Tulip Infratech</span></div>
         <div class="ads-client-pill"><span class="ads-client-name">CRC</span></div>
-        <div class="ads-client-pill"><span class="ads-client-name">KBE </span></div>
-        <div class="ads-client-pill"><span class="ads-client-name">Signatur Global</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">KBE</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Signature Global</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Conscient</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Smart World</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Worldmark</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Omaxe</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Krisumi</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">M3M</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Trump Towers</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Agi Infra</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Tulip Infratech</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">CRC</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">KBE</span></div>
+        <div class="ads-client-pill"><span class="ads-client-name">Signature Global</span></div>
         <div class="ads-client-pill"><span class="ads-client-name">Conscient</span></div>
         <div class="ads-client-pill"><span class="ads-client-name">Smart World</span></div>
         <div class="ads-client-pill"><span class="ads-client-name">Worldmark</span></div>
@@ -306,4 +374,24 @@
       <p>Precision in Every Frame</p>
     </div>
   </footer>
+
 </div>
+
+<!-- ══════════════════════════════════════
+     WHATSAPP FLOATING BUTTON
+     Replace 919810000000 with your actual
+     WhatsApp number in international format
+     (country code + number, no + or spaces)
+══════════════════════════════════════ -->
+<a class="wa-float"
+   href="https://wa.me/918447692117?text=Hello%2C%20I%27m%20interested%20in%20your%20architectural%20solutions."
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp">
+  <span class="wa-tooltip">Chat with us</span>
+  <div class="wa-btn">
+    <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </div>
+</a>
